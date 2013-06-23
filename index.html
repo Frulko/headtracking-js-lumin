@@ -1,0 +1,276 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Lumin</title>
+<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="jquery.fancybox-1.3.4.css" type="text/css" media="screen" />
+</head>
+
+<body>
+
+
+    <script src="js/jquery.js"></script>
+    <script src="js/Detector.js"></script>
+	<script src="js/headtrackr.js"></script>
+    <script>
+$(document).ready(function() {
+   $('#menu li').click( function() {
+	  $('#menu li.active').removeClass('active');
+	  $(this).addClass('active');
+	  $('#content>div').stop().hide();
+	  $('#content #'+$(this).attr('id').replace('bt_', '')+'').show();  
+   });
+   $('#color_choice li').click( function() {
+	  $('#color_choice li.active').removeClass('active');
+	  $(this).addClass('active');
+	  $('#contentlogo>div').stop().hide();
+	  $('#contentlogo #'+$(this).attr('id').replace('bt_', '')+'').show();
+	  
+   });
+   
+   
+     
+		  var videoInput = document.getElementById('inputVideo');
+		  var canvasInput = document.getElementById('inputCanvas');
+		  var screenW = $('#inputCanvas').width();
+          var screenH = $('#inputCanvas').height();
+		  
+		  var degRotMax = 55; //Rotation en degrée maximum du logo
+
+
+		  var htracker = new headtrackr.Tracker(); //Création d'un objet pour le headtracking
+		  htracker.init(videoInput, canvasInput);
+		  htracker.start();
+
+		  document.addEventListener("facetrackingEvent", function(face) { //Ecoute des évenements de tracking
+			  var screenX = screenW/2;
+			  var posX = face.x;
+			  var formuleMathX = ((posX - screenX) * 100)/screenX * degRotMax / 100; //Formule pour convertir la posX en degrée
+			 $('.logo').css({'-webkit-transform':'rotateY('+formuleMathX*(-1)+'deg)'}); //Rotation du logo sur l'axe des Y par rapport à une position sur l'axe des X
+		});
+   
+   
+   
+});
+
+
+     
+    </script>
+    
+    
+<div id="global">
+		<canvas id="inputCanvas" width="320" height="240" style="display:none"></canvas>
+		<video id="inputVideo" autoplay loop></video>
+		
+		<div id="header">
+        <div id="contentlogo">
+       	  <div id="gris" class="logo"> <img src="img/logo.png" alt="" /> </div>
+          <div id="bleu" class="logo"> <img src="img/logo_blue.png" alt="" /></div>
+          <div id="jaune" class="logo"> <img src="img/logo_yellow.png" alt="" /> </div>
+          <div id="vert" class="logo"> <img src="img/logo_green.png" alt="" /></div>
+          <div id="marron-clair" class="logo"> <img src="img/logo_light_brown.png" alt="" /> </div>
+          <div id="marron" class="logo"> <img src="img/logo_brown.png" alt="" /> </div>
+          </div>
+          
+          <div id="nav">
+          	<div id="menu">
+            	<ul>
+                	<li id="bt_video" class="active"><a href="#">video</a></li>
+                	<li id="bt_galerie"><a href="#">galerie</a></li>
+                	<li id="bt_projet"><a href="#">projet</a></li>
+                	<li id="bt_fondation"><a href="#">la fondation</a></li>
+            	</ul>
+            </div><!--menu-->
+            
+            <div id="color_choice">
+            	<ul>
+                    <li id="bt_marron" class="active"><a href="#"><div id="choice" class="brown"></div></a></li>
+                    <li id="bt_marron-clair"><a href="#"><div id="choice" class="light_brown"></div></a></li>
+                    <li id="bt_vert"><a href="#"><div id="choice" class="green"></div></a></li>
+                    <li id="bt_jaune"><a href="#"><div id="choice" class="yellow"></div></a></li>
+                    <li id="bt_bleu"> <a href="#"><div id="choice" class="blue"></div></a></li>
+                    <li id="bt_gris"><a href="#"><div id="choice" class="grey"></div></a></li>
+                 </ul>
+            </div><!--color_choice-->
+            
+          </div><!--nav-->
+          
+  		</div><!--header--> 
+    
+  <div id="content">
+  
+  	<div id="video"> <iframe src="http://player.vimeo.com/video/52226288?badge=0" width="500" height="350" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+    </div>
+    
+    <div id="galerie">
+    
+    <table id="contentgalerie">
+    	<tr>
+			<td id="td-1">
+            <div>
+                <img src="img/galerie1.jpg" alt="" />
+                <img src="img/galerie1b.jpg"  alt="" />
+             </div>
+             </td>
+             	
+             <td>
+             <div>
+                <img src="img/galerie2.jpg" alt="" />
+                <img src="img/galerie2b.jpg"  alt="" />
+              </div>
+             </td>
+             
+             <td>
+             <div>
+                <img src="img/galerie3.jpg" alt="" />
+                <img src="img/galerie3b.jpg" alt="" />
+              </div>
+             </td>
+         </tr>
+         
+         <tr>
+			<td>
+            <div>
+                <img src="img/galerie4.jpg" alt="" />
+                <img src="img/galerie4b.jpg" alt="" />
+             </div>
+             </td>
+             
+             <td>
+             <div>
+                <img src="img/galerie5.jpg" alt="" />
+                <img src="img/galerie5b.jpg" alt="" />
+             </div>
+             </td>
+             
+             <td>
+             <div>
+                <img src="img/galerie6.jpg" alt="" />
+                <img src="img/galerie6b.jpg" alt="" />
+             </div>
+             </td>
+         </tr>
+         
+         </table>
+         
+         
+         
+         
+         
+         
+         		<table>
+				<tr>
+					<td id="td1">
+					<div>
+						<img src="IMG_1109.jpg" id="img1"/>
+						<img src="IMG_1110.jpg" id="img2" />
+					</div>
+					</td>
+					
+				</tr>
+			</table>
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+    </div>
+    <div id="projet">
+        	<table id="contentprojet">
+        	<tr>
+            	<td id="td1">
+                 
+                <h1> LE PROJET LUMIN </h1>
+                <h2> VOTRE GUIDE INTERACTIF <br/> POUR UNE VISITE
+                D'UN GENRE NOUVEAU. </h2>
+				<p>
+                Vivez une expérience interactive en visitant la 
+                fondation Salomon, grâce à LUMIN. à l'entrée du musée, 
+                vous trouverez la borne interactive qui vous permettra de 
+                sélectioner un profil de suivi (couleur, langue ...) et
+                 de scanner votre visage pour la reconnaissance facile 
+                 tout au long de la visite.</p>
+                <div id="video2"> <iframe src="http://player.vimeo.com/video/41877192?badge=0" 
+    width="300" height="200" frameborder="0" webkitAllowFullScreen mozallowfullscreen 
+    allowFullScreen></iframe>
+    			</div>
+                </td>
+                
+                <td id="td2">
+                <img src="img/photo1.png" alt="" />
+                <img src="img/photo2.png" alt="" />
+                <img src="img/photo3.png" alt="" />
+                </td>
+             </tr>
+                </table>
+     </div>  
+                
+                
+    <div id="fondation">
+    		<table id="contentfondation">
+        	<tr>
+            	<td id="td1">
+                 
+                <h1> LA FONDATION SALOMON </h1>                
+				<p>
+               
+                Collectionneurs d'art contemporain, Claudine et Jean-Marc Salomon ont décidé 
+                de s'engager pour la création d'aujourd'hui en ouvrant un espace dédié à sa diffusion. 
+                La fondation, reconnue d'utilité publique par décret du 11 avril 2001, est située, 
+                près d'Annecy, au château d'Arenthon à Alex en Haute-Savoie ; elle s'est donnée 
+                comme mission d'être un lieu vivant et propice à la rencontre entre les créateurs, 
+                les amateurs d'art contemporain et un public aussi large que possible.
+<br/> <br/>
+La fondation a ouvert ses portes le 27 juin 2001 avec une quarantaine d'œuvres des 
+artistes anglais Gilbert & George. Ce choix audacieux dans un département où l'art 
+contemporain est peu représenté et la mise en valeur pertinente des œuvres ont très
+ rapidement donné à la fondation une audience nationale et internationale.</p>
+                
+                </td>
+                
+                <td id="td2">
+                <img src="img/fondation1.jpg" alt="" />
+                <img src="img/fondation2.jpg" alt="" />
+                <img src="img/fondation3.jpg" alt="" />
+                <img src="img/fondation4.jpg" alt="" />
+                </td>
+             </tr>
+                </table>
+    </div>
+    
+    
+    
+   </div><!--content-->
+    
+  <div id="footer">
+        	<div id="liens">
+            	<div id="liens_texte">
+                <ul>
+                	<a href="http://www.fondation-salomon.com/infos-pratiques.html"><li>Infos pratiques</li></a>
+                    <a href="http://www.fondation-salomon.com/contactez-fondation-salomon.html"><li>Contact</li></a>
+                    <a href="http://www.fondation-salomon.com/newsletter.html"><li>Newsletter</li></a>
+                    <a href="http://www.fondation-salomon.com/presse.html"><li>Presse</li></a>
+                </ul>
+                </div><!--liens_texte-->
+                
+                
+                <a href="http://www.fondation-salomon.com/envoyer-a-un-ami.html"><div id="bt_lien" class="contact"></div></a>
+                <a href="http://fr.twitter.com/FondArtSalomon"><div id="bt_lien" class="twitter"></div></a>
+                <a href="http://www.facebook.com/FondationArtContemporainSalomon?fref=ts"><div id="bt_lien" class="facebook"></div></a>
+               
+            </div><!--liens-->
+            
+          <a href="http://www.fondation-salomon.com/"><div id="logo_salomon"></div></a>
+        </div><!--footer-->
+        
+</div><!--global-->
+
+</body>
+</html>

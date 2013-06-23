@@ -1,0 +1,507 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* -----------------------------------    GENERAL  ----------------------------  */
+
+@font-face {
+    font-family: PlutoLight;
+    src: url(PlutoSansCondLight.otf);
+}
+
+@font-face {
+    font-family: PlutoExtraLight;
+    src: url(PlutoSansThin.otf);
+}
+/* -----------------------------------    correction jeanne  ----------------------------  */
+
+
+*{ margin:0; padding:0}
+
+/* -----------------------------------    correction jeanne  ----------------------------  */
+
+
+html{ 
+  margin:0;
+  padding:0;
+  background: url(img/fond.jpg) no-repeat center fixed; 
+  -webkit-background-size: cover; /* pour Chrome et Safari */
+  -moz-background-size: cover; /* pour Firefox */
+  -o-background-size: cover; /* pour Opera */
+  background-size: cover; /* version standardisée */
+}
+
+body{
+	margin: 0;
+	padding: 0;
+}
+
+#global{
+	width: 800px;
+	margin: auto;	
+}
+
+
+
+/* -----------------------------------    HEADER  ----------------------------  */
+
+#gris{
+	width: 282px;
+	height: 77px;
+	margin: auto;
+	padding-top: 40px;
+}
+
+#bleu{
+	
+	width: 282px;
+	height: 77px;
+	margin: auto;
+	padding-top: 40px;
+	display: none;
+}
+
+#jaune{
+	
+	width: 282px;
+	height: 77px;
+	margin: auto;
+	padding-top: 40px;
+	display: none;
+}
+
+#vert{
+	
+	width: 282px;
+	height: 77px;
+	margin: auto;
+	padding-top: 40px;
+	display: none;
+}
+
+#marron-clair{
+	
+	width: 282px;
+	height: 77px;
+	margin: auto;
+	padding-top: 40px;
+	display: none;
+}
+
+#marron{
+	
+	width: 282px;
+	height: 77px;
+	margin: auto;
+	padding-top: 40px;
+	display: none;
+}
+
+#nav{
+	width: 600px;
+	height: 80px;
+	margin: auto;
+	margin-top: 75px;		
+}
+
+#menu{
+	text-transform: uppercase;	
+	font-size: 14pt;
+	font-family: PlutoLight;
+}
+
+#menu ul {
+		margin: 0;
+		padding: 0;		
+}
+
+#menu ul li {
+	list-style: none;
+	float: left;
+	padding-right:30px;
+	padding-left:5px;
+	/* margin-right:20px; */
+}
+
+#menu ul li a {
+	text-decoration: none; 
+	color: #000000;		
+}
+
+#menu ul li a:hover{
+	text-decoration: underline;	
+}
+
+#menu ul li.active{
+	background: url("img/active.png") right center no-repeat;
+}
+
+/* -----------------------------------    correction jeanne  ----------------------------  */
+
+#color_choice{
+	height: 15px;	
+	float: right;
+	margin-top: 5px;
+}
+/* -----------------------------------    correction jeanne  ----------------------------  */
+
+
+#color_choice ul li{
+	list-style: none;
+	float: right;
+}
+
+#choice{
+	width: 15px;
+	height: 15px;
+	float: right;
+	margin-left: 5px;
+}
+
+.blue{
+	background-color: #a8ddd5;	
+}
+
+.yellow{
+	background-color: #e2d296;	
+}
+
+.green{
+	background-color: #9ac97f;	
+}
+
+.light_brown{
+	background-color: #b99d85;	
+}
+
+.brown{
+	background-color: #735645;	
+}
+
+.grey{
+	background-color: #a8aeb0;	
+}
+
+/* -----------------------------------    CONTENT  ----------------------------  */
+
+
+#content{
+	width: 800px;
+	height: 430px;
+	border-bottom: #929292 2px solid;
+	border-top: #929292 2px solid;
+}
+
+#video{
+	width: 800px;
+	height: 430px;
+	margin 0:auto;
+	text-align:center;
+	padding-top:30px;
+}
+
+
+
+#galerie{
+	width: 800px;
+	height: 430px;
+/*	background-color: #0C9; */
+	display: none;	
+}
+
+#projet{
+	width: 800px;
+	height: 430px;
+/*	background-color: #C36;	*/
+
+	display: none;
+}
+
+
+#contentgalerie {
+	width:100%
+	
+	}
+
+#contentgalerie td{
+	text-align:center;
+	//padding:0 0 30px 30px;
+}
+
+
+
+
+
+ 		#galerie{
+				width: 800px;
+				margin: 0 auto;
+		}
+			/* on fout le tableau de la longueur du conteneur */
+			#galerie table{
+				width: 100%;
+				margin-left:35px;
+				padding-top:10px;
+			}
+						#galerie table td{
+							width:193px;
+						}
+
+			/* sert a permetre aux contenu absolut d'etre relatif a cet objet */
+			#galerie table td div{
+				width:193px;
+				position: relative;
+				margin-top:10px;
+			}
+			/* taillage des images (auto concerve les proportion et !important est le correctif IE (sinon heigh à 0...)) */
+			#galerie td img{
+				//width: 200px;
+				//height: auto !important;
+			}
+			/* on positionne l'image 2 sur la 1 : le absolute couplé aux left et top permet de reset le clear de la précédente image et on la cache */
+			#galerie td div img:last-child{
+				position: absolute;
+				top:0;
+				left:0;
+				display: none;
+			}
+			
+			/* lors de l'évenement hover (survollage) on affiche l'image 2 */
+			#galerie td:hover img:last-child{
+				display: block;
+			}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#contentprojet {
+	width:100%
+	
+	}
+
+
+
+
+
+#contentprojet td {
+	padding: 10px 50px 30px;;
+	text-align:center;
+	font-family: PlutoExtraLight;
+	font-size:12px;
+	
+}
+
+#contentprojet td p{
+	width: 400px; 
+	text-align: justify;
+	width:280px;
+	padding-top:10px;
+	padding-bottom:10px;
+	font-size:10px;
+	}
+
+#contentprojet h1{
+	font-size:24px;
+	text-align:left;
+	width: 20 px;
+}
+
+
+#contentprojet h2{
+	text-align:left;
+	font-size:12px;
+	width: 20 px;
+
+}
+
+
+
+#video2 {
+	font-size: 10px;
+    text-align: justify;
+    width: 300px;
+	margin-left:0;
+	padding-left:0;
+}
+
+
+#fondation{
+	width: 800px;
+	height: 430px;
+/*	background-color: #FF3;	 */
+	display: none;
+}
+
+
+
+
+#contentfondation td {
+	text-align:center;
+	font-family: PlutoExtraLight;
+	font-size:12px;
+	
+}
+
+#contentfondation #td2 img{
+	display:inline;
+	padding:5px;
+}
+
+#contentfondation td p{
+	width: 400px; 
+	text-align: justify;
+	width:280px;
+	padding-top:10px;
+	padding-bottom:10px;
+	font-size:10px;
+	}
+
+#contentfondation h1{
+	font-size:24px;
+	text-align:left;
+	width: 20 px;
+}
+
+
+
+
+
+/* -----------------------------------    FOOTER  ----------------------------  */
+
+
+#footer{
+	width: 730px;
+	margin: auto;	
+	margin-top: 40px;
+	padding-bottom: 100px;
+	
+}
+
+#logo_salomon{
+	width: 198px;
+	height: 54px;
+	background-image: url("img/logo_salomon.png");
+	float: right;
+}
+
+#liens{
+	width: 430px;
+	float: left;
+	margin-top: 25px;	
+}
+
+
+
+#liens ul{
+	list-style : none;
+	margin: 0;
+	border: 1px solid;
+	float: left;
+	padding: 0px 0px 5px 10px;
+}
+
+.margin_0{
+	margin-right: 3px;	
+}
+
+#liens ul li{
+	float : left;
+	margin-right: 15px;
+	margin-top: 5px;
+	color: #575756;	
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	text-decoration: none;
+}
+
+#liens_texte{
+	text-decoration: none;
+}
+
+#liens ul li:hover{
+	text-decoration: underline;	
+}
+
+#bt_lien{
+	width: 26px;
+	height: 26px;
+	background-color: black;
+	float: right;
+	margin-left: 5px;	
+}
+
+.facebook{
+	background-image: url("img/pictos_facebook.jpg");	
+}
+
+.facebook:hover{
+	background-position: bottom;	
+}
+
+
+.twitter{
+	background-image: url("img/pictos_twitter.jpg");	
+}
+
+.twitter:hover{
+	background-position: bottom;	
+}
+
+.contact{
+	background-image: url("img/pictos_contact.jpg");	
+}
+
+.contact:hover{
+	background-position: bottom;	
+}
+
+
+
+
+/* HEADTRACKING */
+
+#inputVideo{
+	position: absolute;
+	display: none;
+}
+
+#headtrackerMessageDiv{display: none}
+
+#contentlogo{
+	width:282px; 
+	height:77px; 
+	margin: 0 auto;
+
+	perspective:500px;
+	-webkit-perspective:500px;
+}
+
+.logo{
+	width:282px; 
+	height:77px; 
+
+	position:absolute; 
+	top:0px; 
+	left:0px;
+	
+}

@@ -1,0 +1,12 @@
+{
+  "name": "asteroïd",
+  "main": "index.html",
+  "window": {
+    "toolbar": true,
+	"resizable" : false,
+	"fullscreen" : false,
+	"kiosk": false,
+	"width" : 1200,
+	"height" : 800
+  }
+}
